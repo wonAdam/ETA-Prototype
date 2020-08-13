@@ -1,0 +1,29 @@
+import React, { Component } from 'react';
+import PropTypes from 'prop-types';
+
+class Navbar extends Component {
+    static defaultProps = {
+        title: 'ETA',
+        icon: 'https://everytime.kr/images/about/logo.png'
+    }
+
+    static propTypes= {
+        title: PropTypes.string.isRequired,
+        icon: PropTypes.string.isRequired,
+    }
+
+    render() {
+        return (
+            <div className="navbar">
+                <div>
+                    <h1 display="inline"><img className="eta-icon" src={this.props.icon} alt="에타 아이콘" width="35"/> {this.props.title}</h1>
+                </div>
+                <div>
+                    <h6>대충 Every Time Archiver 라는 뜻</h6>
+                </div>
+            </div>
+        )
+    }
+}
+
+export default Navbar
