@@ -10,6 +10,7 @@ class App extends Component {
     start:0,
     articles:null,
     endOfArticlesIndex: 0,
+    detail:false,
   }
   onClickPrev = () => {
     const start = this.state.start-10 >= 0 ? this.state.start-10 : this.state.start;
@@ -54,20 +55,21 @@ class App extends Component {
   }
 
   render() {
-    return(
-      <Fragment>
-        <div className="spacing"></div>
-        <Navbar />
-        <ArticleContainer start={this.state.start} end={this.state.start+9} articles={this.state.articles}/>
-        <div className="prev-next">
-          <li>
-            <ul onClick={this.onClickPrev}>prev</ul>
-            <ul onClick={this.onClickNext}>next</ul>
-          </li>
-        </div>
-      </Fragment>
-    );
+      return(
+        <Fragment>
+          <div className="spacing"></div>
+          <Navbar />
+          <ArticleContainer start={this.state.start} end={this.state.start+9} articles={this.state.articles} />
+          <div className="prev-next">
+            <li>
+              <ul onClick={this.onClickPrev}>prev</ul>
+              <ul onClick={this.onClickNext}>next</ul>
+            </li>
+          </div>
+        </Fragment>
+      );
   }
+  
 }
 
 

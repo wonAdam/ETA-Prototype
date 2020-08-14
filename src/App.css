@@ -14,8 +14,25 @@
   background-color: #fff;
   box-shadow: 0rem 0.1rem 1rem rgba(0, 0, 0, 0.1);
 }
+
+.navbar > a{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.navbar > a > div > h1, h6{
+  text-decoration: none;
+}
+
 .spacing{
   height: 110px;
+}
+
+.loading{
+  width: 300%;
+  height: 100vh;
 }
 .prev-next{
   display: flex;
@@ -29,7 +46,8 @@
 
 .article-container{
   display:grid;
-  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(3, 1fr);
 }
 
 .content{
@@ -37,6 +55,13 @@
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
+}
+
+.article-card{
+  display:flex;
+  flex-direction: column;
+  justify-content: center;
+  /* align-items: center; */
 }
 
 .status{

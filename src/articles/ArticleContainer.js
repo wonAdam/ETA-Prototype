@@ -15,7 +15,13 @@ class ArticleContainer extends Component {
         }
         else {
             return (
-                <div className="container article-container" />
+                <div className="container article-container">
+                    <div class="ui segment loading">
+                        <div class="ui active inverted dimmer">
+                            <div class="ui large text loader">Loading</div>
+                        </div>
+                    </div>
+                </div>
             )
         }
     }

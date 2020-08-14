@@ -17,7 +17,7 @@ class ArticleItem extends Component {
     render() {
         const { author, content, likes, scraps } = this.props.article;
         const comments_length = this.props.article.comments.length;
-        const url = urljoin("https://everytime.kr/382283", "v" ,this.props.article.id.toString());
+        // const url = urljoin("https://everytime.kr/382283", "v" ,this.props.article.id.toString());
         return (
             <div className="card text-center article-card" style={{height:"300px"}}>
                 <p className="author">작성자: {author}</p>
@@ -33,7 +33,7 @@ class ArticleItem extends Component {
                         {comments_length} 
                     </ul>
                 </li>
-                <p className="content"><a href={url}>에타 게시글로 가기</a>  </p>
+                <a href={urljoin("https://everytime.kr/382283", "v", this.props.article.id.toString()   )}>에타 게시글로 가기</a>
             </div>
         )
     }
