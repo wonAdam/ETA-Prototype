@@ -5,12 +5,12 @@ import {
   Route,
   Link
 } from "react-router-dom";
-import Navbar from './components/Navbar';
-import ArticleContainer from './components/articles/ArticleContainer';
+import Navbar from './Navbar';
+import ArticleContainer from './articles/ArticleContainer';
 import { connect } from 'react-redux';
 import './App.css';
-import { fetchArticles } from './_actions';
-import ArticleDetail from './components/articles/ArticleDetail';
+import { fetchArticles } from '../_actions';
+import ArticleDetail from './articles/ArticleDetail';
 
 
 
