@@ -1,9 +1,20 @@
+html{
+  box-sizing: border-box;
+}
+
+body{
+  margin: 0;
+  padding: 0;
+  font-size: 62.5%;
+}
+
+
 
 .navbar{
   z-index: 100;
   position: fixed;
   padding: 0;
-  height: 90px;
+  height: 7rem;
   width: 100%;
   top: 0;
   display: flex;
@@ -14,26 +25,52 @@
   background-color: #fff;
   box-shadow: 0rem 0.1rem 1rem rgba(0, 0, 0, 0.1);
 }
-.spacing{
-  height: 110px;
+.spacing:after{
+  content: "";
+  clear: both;
+  display: table;
+  height: 10rem;
 }
 .prev-next{
+  font-size: 1rem;
   display: flex;
   justify-content: center;
 }
 .prev-next > li{
   display: flex;
   flex-direction: row;
+}
+
+.prev-next button{
+  color: #eee;
+  margin: 1rem 1rem;
+  padding: .2rem 3rem;
+  font-weight: 800;
+  border-radius: .6rem;
+  background-color: #f44336;
+  border: .5px solid #444;
+  text-align: center;
+  transition: all .2s;
+}
+
+.prev-next button:hover{
+  background-color: rgb(204, 19, 32);
 
 }
+
 
 .article-container{
   display:grid;
   grid-template-columns: 1fr 1fr 1fr;
 }
 
+.article-card{
+  font-size: 1rem;
+  height: 30rem;
+}
+
 .content{
-  height:45px;
+  height:4.5rem;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;

@@ -1,0 +1,6 @@
+export default {
+    FETCH_ARTICLE:'FETCH_ARTICLE',
+    FETCH_ARTICLES:'FETCH_ARTICLES',
+    PREV:'PREV',
+    NEXT:'NEXT',
+}
