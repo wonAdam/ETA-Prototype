@@ -23,10 +23,24 @@ function ArticleDetail(props) {
 
     if(article){
         const { author, content, comments, likes, scraps } = article;
+        const comments_length = article.comments.length;
         return (
             <div className="article-detail-container">
                 <div className="article-detail-author" dangerouslySetInnerHTML={{ __html: htmlDecode(author) }} /> 
                 <div className="article-detail-content" dangerouslySetInnerHTML={{__html: htmlDecode(content)}} />
+                <div className="article-detail-status"> 
+                    <li className="status">
+                        <ul className="likes">
+                            {likes}
+                        </ul>
+                        <ul className="scraps">
+                            {scraps} 
+                        </ul> 
+                        <ul className="comments-length">
+                            {comments_length} 
+                        </ul>
+                    </li>   
+                </div>
                 {comments.map((comment) => {
                     const html = htmlDecode(comment.author)+htmlDecode(comment.content);
                     if(comment.isChild){
