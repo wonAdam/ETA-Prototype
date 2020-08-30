@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import { connect } from 'react-redux';
+import { Link } from 'react-router-dom';
 
 function ArticleDetail(props) {
     console.log(props)
@@ -17,7 +18,8 @@ function ArticleDetail(props) {
     const htmlDecode = (input) => {
         var e = document.createElement('div');
         e.innerHTML = input;
-        return e.childNodes.length === 0 ? "" : Array.from(e.childNodes).map((c) => c.nodeValue ? c.nodeValue : c.outerHTML);
+        console.log(Array.from(e.childNodes));
+        return e.childNodes.length === 0 ? "" : Array.from(e.childNodes).map((c) => c.nodeValue ? c.data : c.outerHTML).reduce((acc, cur) => acc+cur);
     }
 
 
@@ -25,24 +27,31 @@ function ArticleDetail(props) {
         const { author, content, comments, likes, scraps } = article;
         const comments_length = article.comments.length;
         return (
-            <div className="article-detail-container">
-                <div className="article-detail-author" dangerouslySetInnerHTML={{ __html: htmlDecode(author) }} /> 
-                <div className="article-detail-content" dangerouslySetInnerHTML={{__html: htmlDecode(content)}} />
-                <div className="article-detail-status"> 
-                    <li className="status">
-                        <ul className="likes">
+            <div className="container article-detail-container">
+                <div className="article-detail-upper">
+                    <div className="article-detail-upper-left">
+                        <div className="article-detail-author" dangerouslySetInnerHTML={{ __html: htmlDecode(author) }} /> 
+                        <div className="article-detail-content" dangerouslySetInnerHTML={{__html: htmlDecode(content)}} />
+                    </div>
+                    <div className="article-detail-upper-right">
+                        <Link to={`/`} className="article-detail-back">{`<`}</Link>
+                    </div>
+                </div>
+                <div className="article-detail-status-wrapper"> 
+                    <ul className="article-detail-status">
+                        <li className="article-detail-likes">
                             {likes}
-                        </ul>
-                        <ul className="scraps">
+                        </li>
+                        <li className="article-detail-scraps">
                             {scraps} 
-                        </ul> 
-                        <ul className="comments-length">
+                        </li> 
+                        <li className="article-detail-comments-length">
                             {comments_length} 
-                        </ul>
-                    </li>   
+                        </li>
+                    </ul>   
                 </div>
                 {comments.map((comment) => {
-                    const html = htmlDecode(comment.author)+htmlDecode(comment.content);
+                    const html = htmlDecode(comment.author)+"  "+htmlDecode(comment.content);
                     if(comment.isChild){
                         return (
                             <div className="article-detail-comment comment-child" dangerouslySetInnerHTML={{__html: html}} />
@@ -50,17 +59,18 @@ function ArticleDetail(props) {
                     }
                     else{
                         return (
-                            <div className="article-detail-content comment-parent" dangerouslySetInnerHTML={{__html: html}} />
+                            <div className="article-detail-comment comment-parent" dangerouslySetInnerHTML={{__html: html}} />
                         )
                     }
                 })}
+                
                 
             </div>
         )
     }
     else{
         return (
-            <div className="article-detail-container">
+            <div className="container article-detail-container">
             </div>
 
         )

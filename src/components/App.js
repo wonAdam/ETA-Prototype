@@ -30,6 +30,11 @@ function App(props) {
     setIdx(idx+9);
   }
 
+  const startIdxChange = (value) => {
+    if(typeof value !== 'number') return;
+    setIdx(value)
+  }
+
   useEffect(() => {
     props.fetchArticles(idx);
   }, []);
@@ -44,12 +49,11 @@ function App(props) {
           </div>
           <Switch>
             <Route exact path="/">
-              <ArticleContainer articles={props.articles.slice(idx, idx+9)}/>
-              <div className="prev-next">
-                <button onClick={onClickPrev}>{`<`}</button>
-                <button onClick={onClickNext}>{`>`}</button>
-                <input className="page-num-input" type="text" value={0}/>
-              </div>
+              <ArticleContainer 
+                articles={props.articles.slice(idx, idx+9)}
+                onClickPrev={onClickPrev}
+                onClickNext={onClickNext}
+              />
             </Route>
             <Route path='/article/:id' render={(props) => <ArticleDetail {...props}/>}/>
           </Switch>

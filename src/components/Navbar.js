@@ -16,11 +16,11 @@ class Navbar extends Component {
         return (
             <div className="navbar">
                 <a href="/">
-                    <div>
-                        <h1 display="inline"><img className="eta-icon" src={this.props.icon} alt="에타 아이콘" width="35"/> {this.props.title}</h1>
+                    <div className="eta-title-wrapper">
+                        <h1 display="inline" className="eta-title"><img className="eta-icon" src={this.props.icon} alt="에타 아이콘" width="35"/> {this.props.title}</h1>
                     </div>
                     <div>
-                        <h6>대충 Every Time Archiver 라는 뜻</h6>
+                        <h6 className="eta-title-description">대충 Every Time Archiver 라는 뜻</h6>
                     </div>
                 </a>
             </div>
