@@ -3,10 +3,12 @@ import ArticleItem from './ArticleItem';
 import { connect } from 'react-redux';
 
 function ArticleContainer(props) {
-    if(props.articles){
+
+    const articles = props.articles;
+    if(articles){
         return (
             <div className="container article-container">
-                {props.articles.map((article) => {
+                {articles.map((article) => {
                     return <ArticleItem key={article.id} article={article} />
                 })}
             </div>
@@ -21,10 +23,5 @@ function ArticleContainer(props) {
 }
 
 
-const mapStateToProps = state => {
-    return {
-        articles:state.articles
-    }
-}
 
-export default connect(mapStateToProps)(ArticleContainer)
+export default connect()(ArticleContainer)

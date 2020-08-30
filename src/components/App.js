@@ -16,7 +16,6 @@ import ArticleDetail from './articles/ArticleDetail';
 
 function App(props) {
   const [idx, setIdx] = useState(0);
-  const [isLastPage, setIsLastPage] = useState(false);
 
   const onClickPrev = () => {
     if(idx-9 < 0){
@@ -25,7 +24,7 @@ function App(props) {
     setIdx(idx-9);
   }
   const onClickNext = () => {
-    if(isLastPage){
+    if(props.articles.length < idx+9){
       return;
     }
     setIdx(idx+9);
@@ -33,16 +32,8 @@ function App(props) {
 
   useEffect(() => {
     props.fetchArticles(idx);
-  }, [idx]);
+  }, []);
 
-  useEffect(() => {
-    if(props.articles.length < 9){
-      setIsLastPage(true);
-    }
-    else{
-      setIsLastPage(false);
-    }
-  }, [props.articles])
 
   return (
     <Router> 
@@ -53,13 +44,13 @@ function App(props) {
           </div>
           <Switch>
             <Route exact path="/">
-              <ArticleContainer articles={props.articles}/>
+              <ArticleContainer articles={props.articles.slice(idx, idx+9)}/>
               <div className="prev-next">
                 <button onClick={onClickPrev}>{`<`}</button>
                 <button onClick={onClickNext}>{`>`}</button>
+                <input className="page-num-input" type="text" value={0}/>
               </div>
             </Route>
-
             <Route path='/article/:id' render={(props) => <ArticleDetail {...props}/>}/>
           </Switch>
         </Router>
