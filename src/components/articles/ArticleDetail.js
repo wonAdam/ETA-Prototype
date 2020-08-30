@@ -54,12 +54,22 @@ function ArticleDetail(props) {
                     const html = htmlDecode(comment.author)+"  "+htmlDecode(comment.content);
                     if(comment.isChild){
                         return (
-                            <div className="article-detail-comment comment-child" dangerouslySetInnerHTML={{__html: html}} />
+                            <div className="article-detail-comment-wrapper comment-child">
+                                <div className="article-detail-comment" dangerouslySetInnerHTML={{__html: html}} />
+                                <div className="article-detail-comment-like">
+                                    <span>{comment.likes}</span>
+                                </div>                            
+                            </div>
                         )
                     }
                     else{
                         return (
-                            <div className="article-detail-comment comment-parent" dangerouslySetInnerHTML={{__html: html}} />
+                            <div className="article-detail-comment-wrapper comment-parent">
+                                <div className="article-detail-comment  " dangerouslySetInnerHTML={{__html: html}} />
+                                <div className="article-detail-comment-like">
+                                    <span>{comment.likes}</span>
+                                </div>
+                            </div>
                         )
                     }
                 })}

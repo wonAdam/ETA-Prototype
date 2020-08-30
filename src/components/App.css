@@ -119,6 +119,10 @@ body{
   justify-content: center;
 }
 
+.article-detail-status{
+  justify-content: flex-end;
+}
+
 .article-card-likes, .article-detail-likes{
   padding: 0 1rem;
   background-repeat: no-repeat;
@@ -204,9 +208,10 @@ body{
 
 .article-detail-back{
   float: right;
-  font-size: 5rem;
+  font-size: 3rem;
+  font-weight: 800;
   background-color: #f44336;
-  padding: 1.5rem 1.5rem 2rem 1.5rem;
+  padding: 1rem 1rem 1.5rem 1rem;
   border-radius: 1rem;
   text-align: center;
   color: #eee;
@@ -221,6 +226,7 @@ body{
 .article-detail-author{
   display: inline-block;
   font-size: 1rem;
+  margin: 1rem;
 }
 
 .article-detail-content{
@@ -231,13 +237,35 @@ body{
   font-size: 1rem;
 }
 
-.article-detail-comment{
-  line-height: 1.5;
-  margin: 1rem;
-  font-size: 1rem;
+.article-detail-comment-wrapper{
   border: .1px solid #bbb;
   padding: 1rem 1rem;
   border-radius: .2rem;
+  margin: 1rem;
+  display: flex;
+}
+
+.article-detail-status-wrapper{
+  margin: 2rem 0;
+}
+
+.article-detail-comment{
+  line-height: 1.5;
+  font-size: 1rem;
+}
+
+.article-detail-comment-like{
+  margin-left: auto;
+  display: flex;
+  align-items: center;
+}
+
+.article-detail-comment-like span{
+  padding: 0 1rem;
+  background-repeat: no-repeat;
+  background-position: left center;
+  background-size: 12px 12px;
+  background-image: url(https://everytime.kr/images/new/container.articles.vote.png);
 }
 
 .comment-child{
