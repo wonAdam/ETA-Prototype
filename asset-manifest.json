@@ -1,0 +1,22 @@
+{
+  "files": {
+    "main.css": "/eta-archiver-github-depl/static/css/main.a000f652.chunk.css",
+    "main.js": "/eta-archiver-github-depl/static/js/main.ca3be1cd.chunk.js",
+    "main.js.map": "/eta-archiver-github-depl/static/js/main.ca3be1cd.chunk.js.map",
+    "runtime-main.js": "/eta-archiver-github-depl/static/js/runtime-main.f09215f3.js",
+    "runtime-main.js.map": "/eta-archiver-github-depl/static/js/runtime-main.f09215f3.js.map",
+    "static/js/2.91b26fc4.chunk.js": "/eta-archiver-github-depl/static/js/2.91b26fc4.chunk.js",
+    "static/js/2.91b26fc4.chunk.js.map": "/eta-archiver-github-depl/static/js/2.91b26fc4.chunk.js.map",
+    "index.html": "/eta-archiver-github-depl/index.html",
+    "precache-manifest.fb4e7139e8dcbb13dd9b15fe03cea984.js": "/eta-archiver-github-depl/precache-manifest.fb4e7139e8dcbb13dd9b15fe03cea984.js",
+    "service-worker.js": "/eta-archiver-github-depl/service-worker.js",
+    "static/css/main.a000f652.chunk.css.map": "/eta-archiver-github-depl/static/css/main.a000f652.chunk.css.map",
+    "static/js/2.91b26fc4.chunk.js.LICENSE.txt": "/eta-archiver-github-depl/static/js/2.91b26fc4.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.f09215f3.js",
+    "static/js/2.91b26fc4.chunk.js",
+    "static/css/main.a000f652.chunk.css",
+    "static/js/main.ca3be1cd.chunk.js"
+  ]
+}
