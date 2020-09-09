@@ -26,6 +26,10 @@ function ArticleContainer(props) {
     else {
         return (
             <div className="container article-container">
+                <div className="loader-container">
+                    <img src="./GearLoader.svg" alt="loading..." className="loader"/>
+                    <p className="loader-text">서버가 미국이라 좀 걸립니다...</p>
+                </div>
             </div>
         )
     }

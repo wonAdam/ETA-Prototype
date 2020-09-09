@@ -3,7 +3,6 @@ import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
 
 function ArticleDetail(props) {
-    console.log(props)
     const [article, setArticle] = useState(null);
 
     useEffect(() => {
