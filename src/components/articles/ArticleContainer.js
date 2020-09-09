@@ -1,6 +1,7 @@
 import React from 'react'
 import ArticleItem from './ArticleItem';
 import { connect } from 'react-redux';
+import { ReactComponent as Loader } from './GearLoader.svg';
 
 function ArticleContainer(props) {
 
@@ -27,7 +28,7 @@ function ArticleContainer(props) {
         return (
             <div className="container article-container">
                 <div className="loader-container">
-                    <img src="./GearLoader.svg" alt="loading..." className="loader"/>
+                    <Loader />
                     <p className="loader-text">서버가 미국이라 좀 걸립니다...</p>
                 </div>
             </div>
