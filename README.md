@@ -3,5 +3,7 @@
 ### Visit website 👉👉👉 https://eta-archiving.herokuapp.com/
 
 ##... 서비스가 중단되었습니다.
+<br>
 아무래도 이용약관을 위반한 모양입니다.
-![이용약관]()
+<br>
+![이용약관](https://github.com/wonAdam/ETA-Website/blob/main/20200921135535.png?raw=true)
